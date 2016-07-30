@@ -8,6 +8,32 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Button x:Name="PlayButton" 
+                Content="Play Music" 
+                Margin="10,10" 
+                VerticalAlignment="Top"
+                HorizontalAlignment="Center"
+                Click="PlayButton_Click"/>
+        <Button x:Name="PauseButton" 
+                Content="Pause Music" 
+                Margin="10,50" 
+                VerticalAlignment="Top"
+                HorizontalAlignment="Center" 
+                Click="PauseButton_Click"/>
+        <Button x:Name="StopButton" 
+                Content="Stop Music" 
+                Margin="10,90" 
+                VerticalAlignment="Top"
+                HorizontalAlignment="Center" 
+                Click="StopButton_Click" />
 
+        <Slider x:Name="volSlider"
+                VerticalAlignment="Top"
+                Width="200" 
+                Margin="10,130" 
+                ValueChanged="volSlider_ValueChanged"/>
+
+        <MediaElement x:Name="song"/>
+        
     </Grid>
 </Page>
