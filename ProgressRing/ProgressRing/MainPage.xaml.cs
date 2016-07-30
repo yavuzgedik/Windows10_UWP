@@ -26,5 +26,22 @@ namespace ProgressRing
         {
             this.InitializeComponent();
         }
+
+        private void toggle_Toggled(object sender, RoutedEventArgs e)
+        {
+            if (toggle != null)
+            {
+                if (toggle.IsOn == true)
+                {
+                    progressRing.IsActive = true;
+                    progressRing.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    progressRing.IsActive = false;
+                    progressRing.Visibility = Visibility.Collapsed;
+                }
+            }
+        }
     }
 }

@@ -8,6 +8,23 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
+        <ToggleSwitch x:Name="toggle" 
+                      HorizontalAlignment="center" 
+                      VerticalAlignment="Top" 
+                      Margin="10"
+                      OffContent="Close / Kapalı" 
+                      OnContent="Open / Açık" 
+                      Toggled="toggle_Toggled"/>
+        <Grid Margin="10,60"
+              Background="Blue"
+              Width="150"
+              Height="150" 
+              VerticalAlignment="Top"
+              HorizontalAlignment="Center">
+            <ProgressRing x:Name="progressRing"
+                          Width="50" 
+                          Height="50"
+                          Foreground="White"/>
+        </Grid>
     </Grid>
 </Page>
