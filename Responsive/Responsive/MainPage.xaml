@@ -8,6 +8,83 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition x:Name="LeftCol"/>
+            <ColumnDefinition x:Name="RightCol"/>
+        </Grid.ColumnDefinitions>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
 
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="VisualStateGroup">
+                <VisualState x:Name="VisualStateMin320">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="320"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="izmirImg.(Grid.ColumnSpan)" Value="2" />
+                        <Setter Target="izmirImg.(Grid.RowSpan)" Value="1" />
+                        <Setter Target="stackpanel.(Grid.Column)" Value="0" />
+                        <Setter Target="stackpanel.(Grid.Row)" Value="1" />
+                        <Setter Target="stackpanel.(Grid.ColumnSpan)" Value="2" />
+                        <Setter Target="stackpanel.(Grid.RowSpan)" Value="1" />
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="VisualStateMin548">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="548"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="izmirImg.(Grid.ColumnSpan)" Value="2" />
+                        <Setter Target="izmirImg.(Grid.RowSpan)" Value="1" />
+                        <Setter Target="stackpanel.(Grid.Column)" Value="0" />
+                        <Setter Target="stackpanel.(Grid.Row)" Value="1" />
+                        <Setter Target="stackpanel.(Grid.ColumnSpan)" Value="2" />
+                        <Setter Target="stackpanel.(Grid.RowSpan)" Value="1" />
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="VisualStateMin1024">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="1024"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="izmirImg.(Grid.ColumnSpan)" Value="1" />
+                        <Setter Target="izmirImg.(Grid.RowSpan)" Value="2" />
+                        <Setter Target="stackpanel.(Grid.Column)" Value="1" />
+                        <Setter Target="stackpanel.(Grid.Row)" Value="0" />
+                        <Setter Target="stackpanel.(Grid.ColumnSpan)" Value="1" />
+                        <Setter Target="stackpanel.(Grid.RowSpan)" Value="2" />
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+
+        <Image x:Name="izmirImg"
+               Grid.Column="0"
+               Grid.Row="0"
+               Source="Assets/Images/izmir.jpg" 
+               Stretch="Fill"/>
+        
+        <StackPanel x:Name="stackpanel" Grid.Column="1" Background="LightGray">
+            <Image x:Name="kodfestImg" 
+                   Source="Assets/Images/kodfest.com.png"
+                   Width="100"
+                   Height="100"
+                   HorizontalAlignment="Left"
+                   Margin="10"/>
+            <HyperlinkButton Content="KodFest.com"
+                             Margin="10,0" 
+                             NavigateUri="http://www.kodfest.com"/>
+            <TextBlock Foreground="White"
+                       FontWeight="Light" 
+                       Text="Programlama Teknoloji BLogu"
+                       Margin="10"/>
+            <TextBlock Text="İzmir, Türkiye"
+                       Margin="10"/>
+        </StackPanel>
+        
     </Grid>
 </Page>
