@@ -1,0 +1,44 @@
+﻿<Page
+    x:Class="YOChat.Windows.LoginPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:YOChat.Windows"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:model="using:YOChat.Windows.Model"
+    mc:Ignorable="d">
+
+    <StackPanel Margin="20">
+        
+        <TextBlock Text="YOChat Giriş"></TextBlock>
+        
+        <TextBox x:Name="FullName" Header="Adınız Soyadınız" PlaceholderText="Lütfen Adınızı Girin..."></TextBox>
+
+        <PasswordBox x:Name="Password" Header="Şifre"></PasswordBox>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10*"></ColumnDefinition>
+                <ColumnDefinition Width="90*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            
+            <ComboBox x:Name="CountryPhoneCode" Grid.Column="0">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate x:DataType="model:Country">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Width="40" Height="40" Source="{x:Bind Flag}"></Image>
+                            <TextBlock Text="{x:Bind PhoneCode}"></TextBlock>
+                            <TextBlock Text="{x:Bind CountryName}"></TextBlock>
+                        </StackPanel>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+
+            <TextBox x:Name="PhoneNumber" InputScope="TelephoneNumber" Grid.Column="1"></TextBox>
+            
+        </Grid>
+
+        <Button Content="Kaydol" Click="Button_Click"></Button>
+        
+    </StackPanel>
+</Page>
