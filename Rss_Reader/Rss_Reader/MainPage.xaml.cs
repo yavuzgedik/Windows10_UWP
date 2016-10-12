@@ -16,7 +16,6 @@ namespace Rss_Reader
         private async void OkBtn_Click(object sender, RoutedEventArgs e)
         {
             Uri uri = new Uri(UrlBox.Text);
-
             SyndicationClient client = new SyndicationClient();
             SyndicationFeed feed = await client.RetrieveFeedAsync(uri);
 
