@@ -23,6 +23,7 @@ namespace Rss_Reader
             {
                 foreach (SyndicationItem item in feed.Items)
                 {
+                    // Summary = Description
                     listBox.Items.Add(item.Title.Text  + " - " + item.Summary.Text);
                 }
             }
